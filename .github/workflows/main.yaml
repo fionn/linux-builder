@@ -37,6 +37,11 @@ jobs:
         shell: bash
         working-directory: linux
 
+      - name: Print build configuration
+        run: cat .config
+        shell: bash
+        working-directory: linux
+
       - name: Build
         run: make -j "$(nproc --all)" bindeb-pkg
         shell: bash
